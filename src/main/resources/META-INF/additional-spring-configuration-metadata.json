@@ -1,0 +1,33 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.url."
+    },
+    {
+      "name": "spring.datasource.driverClassName",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.driverClassName."
+    },
+    {
+      "name": "spring.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.username."
+    },
+    {
+      "name": "spring.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.password."
+    },
+    {
+      "name": "spring.h2.console.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.h2.console.enabled."
+    },
+    {
+      "name": "spring.h2.console.path",
+      "type": "java.lang.String",
+      "description": "Description for spring.h2.console.path."
+    }
+  ] }
