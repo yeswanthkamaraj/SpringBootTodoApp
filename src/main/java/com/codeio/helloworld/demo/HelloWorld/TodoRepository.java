@@ -2,7 +2,9 @@ package com.codeio.helloworld.demo.HelloWorld;
 
 import org.springframework.stereotype.Component;
 
-//CRUD
-public class TodoRepository  {
-
+@Component
+public class TodoRepository {
+    String getAllTodos(){
+        return "Todos   added";
+    }
 }
