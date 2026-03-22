@@ -14,5 +14,8 @@ public class TodoService {
     public Todo createTodo(Todo todo){
         return todoRepository.save(todo);
     }
+    public Todo getTodoById(Long id){
+        return todoRepository.findById(id).orElseThrow(()-> new RuntimeException("Todo Not found"));
+    }
 
 }
