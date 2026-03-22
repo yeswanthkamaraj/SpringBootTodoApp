@@ -39,14 +39,14 @@ public class TodoController {
     }
 
 
-    @PutMapping("/{id}")
-    String updateUser(@PathVariable long id){
-        return "User updated with Id No : "+id;
+    @PutMapping
+    ResponseEntity<Todo> updateUser(@RequestBody Todo todo){
+       return new  ResponseEntity<>(todoService.updateTodo(todo),HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    String deleteUser(@PathVariable long id){
-        return "User deleted with Id No : "+id;
+    void deleteUser(@PathVariable long id){
+        todoService.deleteTodoById(id);
     }
 
 }
