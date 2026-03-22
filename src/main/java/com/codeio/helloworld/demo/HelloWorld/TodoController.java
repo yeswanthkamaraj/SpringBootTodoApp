@@ -6,16 +6,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/TodoApp")
 public class TodoController {
     @Autowired
     private TodoService todoService;
 
-    @GetMapping("/get")
-    String getTodo(){
-        return "Todo";
-    }
+
     // path variable
     @GetMapping("/{id}")
     ResponseEntity<Todo> getTodoById(@PathVariable long id){
@@ -27,17 +26,18 @@ public class TodoController {
         }
 
     }
-
-    //Request Param
-    @GetMapping("")
-    String getTodoByIdParam(@RequestParam("todoid") long id){
-        return "Todo by Id "+id;
+    @GetMapping
+    ResponseEntity<List<Todo>> getTodos(){
+        return new ResponseEntity<List<Todo>>(todoService.getTodos(),HttpStatus.OK);
     }
+
+
 
     @PostMapping("/create")
     ResponseEntity<Todo> createUser(@RequestBody Todo todo){
         return new  ResponseEntity<>(todoService.createTodo(todo),HttpStatus.CREATED);
     }
+
 
     @PutMapping("/{id}")
     String updateUser(@PathVariable long id){
